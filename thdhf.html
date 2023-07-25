@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Auto Generate Name</title>
+    <style>
+        /* Gaya untuk kotak berwarna */
+        .nama-container {
+            display: inline-block;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nama Acak</h1>
+    <!-- Tambahkan class "nama-container" pada div yang mengelilingi nama acak -->
+    <div class="nama-container">
+        <p id="namaAcak">Klik tombol di bawah untuk menghasilkan nama acak.</p>
+    </div>
+
+    <button onclick="generateName()">Generate</button>
+
+    <script>
+        const firstNames = ['Miko', 'Asuka', 'Ramiko', 'Arrais', 'Yui', 'Olivia', 'Tama', 'Haruto', 'Yuma', 'Aoi', 'Ren', 'Hina', 'Kaito', 'Sora', 'Hana', 'Kanna', 'Rin', 'Haru', 'Hikari', 'Tsubasa', 'Nozomi', 'Riku', 'Misaki', 'Ichiro', 'Yoshiko', 'Shinji', 'Kaede', 'Kazuki', 'Chiharu', 'Ayumu', 'Mariko', 'Taiki', 'Rina', 'Shota', 'Emi', 'Daiki', 'Airi', 'Hiroki', 'Rika', 'Jun', 'Kanako', 'Kenta', 'Akane', 'Takumi', 'Nanami', 'Tatsuya'];
+        const lastNames = ['Sora', 'Hana', 'Tama', 'Hosi', 'Miko', 'Asuka', 'Suzuki', 'Tanaka', 'Takahashi', 'Watanabe', 'Yamamoto', 'Ito', 'Yamada', 'Nakamura', 'Kobayashi', 'Saito', 'Kato', 'Yoshida', 'Yamaguchi', 'Sasaki', 'Yamashita', 'Suzuki', 'Tanaka', 'Takahashi', 'Watanabe', 'Yamamoto', 'Ito', 'Yamada', 'Nakamura', 'Kobayashi', 'Saito', 'Kato', 'Yoshida', 'Yamaguchi', 'Sasaki'];
+
+        function getRandomItem(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        function generateName() {
+            const firstName = getRandomItem(firstNames);
+            const lastName = getRandomItem(lastNames);
+            const fullName = firstName + ' ' + lastName;
+
+            document.getElementById('namaAcak').textContent = fullName;
+        }
+    </script>
+</body>
+</html>
